@@ -1,6 +1,7 @@
 import requests  # for getting the data from the web
 import re
 
+
 def deg_to_cardinal(deg):  # stolen from https://gist.github.com/RobertSudwarts/acf8df23a16afdb5837f
     dirs = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
     ix = round(deg / (360. / len(dirs)))
@@ -45,6 +46,7 @@ def get_atmo_pres(atmo_data):
     millibar = int(pressure) * 338639 / 1000000
 
     return str(round(millibar, 2)) + " millibars"
+
 
 if __name__ == '__main__':
     station = input("Enter weather station: ").upper().strip()
